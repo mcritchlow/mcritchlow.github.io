@@ -4,7 +4,6 @@ title:  "Advanced Hydra Camp - Day 3"
 date:   2017-05-10 18:39:30 -0700
 categories: hydra development
 ---
-# Hydra Camp Day 3
 Hydra Camp Day 3 followed the same pattern as Day 2 by starting with everyone breaking into groups of 4-6 and
 discussing four questions together:
 
@@ -27,7 +26,7 @@ Another tidbit I heard from the Northwestern folks is that they're already
 working towards porting some of Avalon's A/V features into the Hydra core, such
 as hydra-derivatives. Exciting stuff!
 
-## Workflow
+### Workflow
 We then jumped into Workflow. Some references:
 1. [Workflow Lesson][workflow-lesson]
 2. [Diagram of one-step mediated workflow][mediated-diagram] from DCE
@@ -90,7 +89,7 @@ custom workflows are very possible, and I could see UCSD having a 2 step
 workflow. Though honestly I think we'd be perfectly well off with the existing,
 bundled, 1 step workflow.
 
-## Jobs/Actors
+### Jobs/Actors
 1. [Jobs Lesson][jobs-lesson]
 
 After lunch Adam gave us a walk-through of Jobs and how they're implemented in

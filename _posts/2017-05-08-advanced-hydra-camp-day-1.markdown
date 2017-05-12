@@ -35,6 +35,7 @@ templates][rspec-templates] that he used for a presentation he did for, I
 believe, the last Hydra Connect. This is a great reference that I've bookmarked
 to circle back to when writing new tests for various parts of our Hydra app.
 
+### Pairing - MusicalWork
 For the majority of the rest of the day, we broke into pairs and did some
 pairing on adding new properties to a MusicalWork model, getting them connected properly to a
 presenter, getting the presenter correctly wired into the proper controller,
@@ -80,6 +81,7 @@ This apparently adds the URI to an in memory cache, which, given that one is
 likely to use this URI in tens of not potentially thousands of records, could
 come in quite handy.
 
+### PCDM Intro
 Finally, Tom went through an overview an initial dive into PCDM and how it's
 implemented in Hydra. He also gave a brief summary of the role of ActiveFedora,
 which I think for folks who even have some familiarity with Hydra, but less

@@ -23,6 +23,7 @@ could just be supported better by the framework. I really admired Tom Johnson
 taking the time to explicitly state that, essentially, 'if you see something,
 say something'.
 
+### PCDM Cont.
 After that Tom took us through some PCDM for the first half of the day. But we
 kicked off by reviewing some questions that had come up the previous day around
 the differences between PCDM and Hydra Works, versioning in Fedora as it stands
@@ -99,6 +100,7 @@ to the parent. I actually suspect we want a mix of both, so I want to look into
 the has_subresource thing more. I think this used to be available via #contains,
 but I'd have to look back to be sure.
 
+### Open Book Tour
 Then we got a tour of the OpenBook building which was amazing. Lots of history
 and another example of how supportive the Minnesota community is of the arts and
 literature. One of the more amazing things we saw was a hand printing that was
@@ -108,6 +110,8 @@ being done of a Midsummer Night's Dream.
 
 ![Midsummer Night's Dream]({{ site.url }}/assets/book.jpg)
 
+
+### IIIF
 For the rest of the day, Justin Coyne walked us through the IIIF. He had already
 setup a great [reference page][iiif-wiki] on the wiki, which I intend to go back
 and read more about later. But we covered that there are actually four API's
