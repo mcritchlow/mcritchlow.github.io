@@ -117,6 +117,8 @@ indexing in Solr. Perhaps the jobs could be either overridden and updated to run
 an indexing task at the end. Or, maybe soft commits.
 
 
+![Group Picture]({{ site.url }}/assets/group.jpg)
+
 [jobs-lesson]: https://github.com/RepoCamp/ahc/wiki/Jobs
 [book-workflow]: https://github.com/pulibrary/plum/blob/master/config/workflows/books_workflow.json
 [workflow-validation]: https://github.com/projecthydra-labs/hyrax/blob/master/app/services/hyrax/workflow/workflow_schema.rb#L57
