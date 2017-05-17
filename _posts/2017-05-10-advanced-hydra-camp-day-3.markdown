@@ -118,6 +118,7 @@ an indexing task at the end. Or, maybe soft commits.
 
 
 ![Group Picture]({{ site.url }}/assets/group.jpg)
+Photo By: Mark Bussey
 
 [jobs-lesson]: https://github.com/RepoCamp/ahc/wiki/Jobs
 [book-workflow]: https://github.com/pulibrary/plum/blob/master/config/workflows/books_workflow.json
