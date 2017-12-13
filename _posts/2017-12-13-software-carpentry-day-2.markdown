@@ -75,7 +75,16 @@ knowledge is.
 - if we missed anything, how can they find more info
 - end on a high note, even if didn't get through everything
 
+### Multiple Choice questions
+- Use an online tool to prepopulate some of the multiple choice questions
+- This will let you assess how **each** person is doing, instead of just the one or two people who always know the right
+  answers
+- [Kahoot][kahoot] is one option
+- [More options][assessment] are available too and I should look into
 
+
+[assessment]:https://www.edutopia.org/blog/5-fast-formative-assessment-tools-vicki-davis
+[kahoot]:https://kahoot.it/
 [dk-effect]:https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect
 [mentors]:https://software-carpentry.org/join/subcom/mentoring/
 [naupaka]:https://github.com/naupaka/2017-03-05-ucsf-r/blob/gh-pages/workshop/01_Sunday/01_Sunday_am/0000_slides/intro-slides.ipynb
