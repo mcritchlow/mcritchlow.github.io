@@ -4,7 +4,7 @@ title:  "Software Carpentry Instructor Training Day 1"
 date:   2017-12-12 17:39:30 -0700
 categories: software carpentry instruction
 ---
-### General
+### General Disclaimer
 This is going to be a non-curated mental dump of things I'm going to highlight as takeaways from the instructor
 training. I'm not confident this will be of much value to anyone besides me ;)
 
