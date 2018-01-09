@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "MOOM Week 1: The Object-Oriented Idea"
+date:   2018-01-09
+categories: software object-oriented avdi
+---
+
+## Introduction ##
+For the next several weeks I'm going to be taking a new online course from [Avdi Grimm][avdi] called [Master the
+Object-Oriented Mindset in Ruby and Rails][moom]. While I have worked primarily with object-oriented languages
+throughout my career, I recently transitioned back to a more technical role at work that is going to involve working a
+lot in Ruby and Rails and I'm excited to see how this course might help jump start that process for me. I also took a
+class from Sandi Metz a while ago where Avdi was one of the co-teachers, and I really trust his ability to teach these
+concepts in a very approachable way. As a Ruby Tapas subscriber for years, I've learned a ton of little tips and tricks
+from Avdi that have helped me immensely. These notes are for me as reference going forward, and will undoubtedly be very
+un-comprehensive. As a result, if you stumble across this and are interested, please sign up for the class! Ok enough fluff, week 1..
+
+
+## What does it mean to be object-oriented? ##
+Avdi, rightly, notes that when we think of object-oriented programming, we tend to think of concepts like: classes,
+object instances, methods, etc. He argues that most of these ideas actually have nothing to do with the original
+object-oriented concept.
+
+OO is an _architectural style_ with 3 basics tenets, via Alan Kay:
+1. Messaging
+2. Local retention and protection and hiding of state-process
+3. Extreme late-binding of all things
+
+We usually think of message sends as synchronous, but it doesn't have to be that way. Same with messages being
+bi-directional (return values).
+
+Cells and messages - if thought of this way, it's an easier idea to wrap our heads around as opposed to complex
+relationships between classes, modules, etc.
+
+[Alan Kay's relatively recent comments][kay] on 'state-process':
+> “State-process” means that from the outside, you can discover that these “computers” can often remember things (inside
+> there is something that acts like “state”), and they can be active (inside there is something like “processing”). But
+> for many reasons, including that almost all the time you don’t want or need to know the details of a “server” — you just
+> want it to serve — you are much better off dealing with computations in terms of the semantic transactions that can be
+> represented in the messages."
+
+## Understanding late-binding with "barewords" ##
+Example of various bindings: planning a meetup in a local library.
+- "early bindings" - explicit directions ahead of time "go in door, turn left, ..."
+- "less early bound" - "go into library and look for room 100". Leaves more room
+- "late bound" - go to front desk and ask for directions to the meetup room
+
+"barewords" in ruby: - code that refers to named values. A message that wraps whatever scoped thing like
+instance variable, class variable, module property, etc. Say an `attr_reader` for `the_variable` instead of a direct reference to the
+instance variable via `@the_variable`
+
+## Methods vs Messages ##
+Alan Kay's emphasis is on sending messages, not "calling methods". He says:
+> The key in making great and growable systems is much more to design how its modules communicate rather than what their
+> internal properties and behaviors should be
+
+In Ruby, we send messages using object methods. Avdi lists 4 properties that make up a good message
+
+1. Messages are late-bound - recipient of messages decides what to do with it
+2. Message are discretionary - the recipient can also decide to do **nothing**
+3. Message are one-way - there should be no hard dependency on return values. Actor Model, East-Oriented Code, etc.
+4. Messages are commoditized formats - Data passed in messages ideally doesn't require the receiver to have intimate
+   knowledge of the collaborating object.
+
+In ruby, methods are not first class objects. Methods must be in a class/proc/lambda. Example, send `notify` message to
+`notifier` receiver which may, at any given time during runtime, be a different receiver depending on the circumstances.
+
+A **message** is a name for _responsibility_ which an object may have
+
+A **method** is a _named, concrete piece of code_ that encodes one way a responsibility may be fulfilled
+
+## Homework/Further Reading ##
+1. [Alan Kay email about OOP][kay-oop]
+2. [The Early History of Smalltalk][smalltalk]
+
+[avdi]:https://avdi.codes/
+[moom]:https://avdi.codes/moom/
+[kay]:https://www.quora.com/What-does-Alan-Kay-mean-when-he-said-OOP-to-me-means-only-messaging-local-retention-and-protection-and-hiding-of-state-process-and-extreme-late-binding-of-all-things-It-can-be-done-in-Smalltalk-and-in-LISP/answer/Alan-Kay-5
+[kay-oop]:http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en
+[smalltalk]:http://worrydream.com/EarlyHistoryOfSmalltalk/
