@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "SCALE - Day 1 Notes"
+date:   2018-03-09
+categories: linux conferences devops
+---
+
+## Postgres Partitioning ##
+* [Summary][postgres-partitioning]
+* [Slides][pg-slides]
+* How to break up massive DB tables, partitioning. Worst example he saw was *1k*
+  partitions in a _single_ table.
+* What table partitioning is
+* How it was implemented
+* the new implementation
+
+### Why partitioning?
+Performance:
+* As table size grows, queries slow down, even with indexing
+* Data access patterns (users table, not active) may dictate only a small
+  portion of a table need to be queried against
+
+Manageability:
+* Allow data to be added/removed much easier
+* Maintenance commands (vacuum, reindex, cluster) can focus on active data
+
+Scalability:
+* Work around hardware constraints (disk size, speed)
+* Maintain performance, manageability over magnitudes more data
+
+### History of Partitioning
+< 8.1 manual partitioning via inheritance/views
+v8.1 Constraint Exclusion ( focus queries against partition table set )
+v10 Declarative Partitioning ( active partitioning development in PG )
+
+
+### Partitioning terminology
+* Range Partitioning - defined by specific range of data, like a `created_by` timestamp
+* List Partitioning - specific list of values (states, hash, zip codes, alpha, userid%3 )
+
+### Creating Partitioned Tables
+* Should it be indexed? -- adds complexity, administration cost, app changes
+* Should it be partitioned? -- adds complexity, admin cost, indexing, # rows,
+types of queries, data growth
+
+### Creating Partitioned tables
+* "old way" create a "parent" table
+    * no primary key on a partition table :scream:
+    * define "child" partitions (use a constraint, columns from base table) uses
+      INHERITS (parent)
+    * add constraints to child table via `ALTER_TABLE ADD FOREIGN KEY
+      REFERENCES`
+    * add indexes to child table via normal `CREATE INDEX`
+    * define your own naming scheme for "child tables"
+    * build mechanism to route data from parent table to child tables on
+      insert/update/delete as a hook/trigger
+
+* "new way" declarative partitioning
+    * Syntax mostly the same when defining table, but now have `PARTIION_BY_RANGE (payment_date)
+    * still no primary key :scream:
+    * Child table defined via `PARTITION OF parent`. All columns still come from
+      base table
+    * Still need to have non-overlapping `CONSTRAINT`
+
+_note_: Can still use the "old way" in PG 10, and the differences between syntax isn't
+very significant.
+
+### Automating maintenance
+* Deterministic partitions can be pre-created (a-z partitions for user table)
+* Triggers/functions can be dynamically generated
+* Partition structure doesn't have to be complete
+* `generate_series()` is your friend
+* [PG Partman extension][partman]
+
+### A Unique Problem
+* Work around for partition key
+* constraint defines unique sets
+* add unique index to each partition
+* PG 11 will handle this automagically
+
+[postgres-partitioning]:https://www.socallinuxexpo.org/scale/16x/presentations/postgresql-partitioning
+[partman]:https://github.com/omniti-labs/pg_partman
+[pg-slides]:https://omniti.com/presents
