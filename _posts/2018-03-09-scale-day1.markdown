@@ -48,15 +48,14 @@ types of queries, data growth
     * no primary key on a partition table :scream:
     * define "child" partitions (use a constraint, columns from base table) uses
       INHERITS (parent)
-    * add constraints to child table via `ALTER_TABLE ADD FOREIGN KEY
-      REFERENCES`
+    * add constraints to child table via `ALTER_TABLE ADD FOREIGN KEY REFERENCES`
     * add indexes to child table via normal `CREATE INDEX`
     * define your own naming scheme for "child tables"
     * build mechanism to route data from parent table to child tables on
       insert/update/delete as a hook/trigger
 
 * "new way" declarative partitioning
-    * Syntax mostly the same when defining table, but now have `PARTIION_BY_RANGE (payment_date)
+    * Syntax mostly the same when defining table, but now have `PARTIION_BY_RANGE (payment_date)`
     * still no primary key :scream:
     * Child table defined via `PARTITION OF parent`. All columns still come from
       base table
@@ -78,6 +77,66 @@ very significant.
 * add unique index to each partition
 * PG 11 will handle this automagically
 
+## Multi-Container Deployment with Ansible Service Broker
+* [Summary][ansible-summary]
+* [Slides][ansible-slides]
+* Ansible Service Broker == [Automation Broker][automation-broker]
+
+### Provisioning
+* Create a full stack of cluster resources - DB, API Service, Frontend
+* Integrate with external services - legacy apps, traditional DB cluster,
+  appliances.
+* Post-install bootstrapping - init a DB, restore backup, create resources in
+  the application
+    * run a single Pod to completion
+    * run a job
+    * use config management
+    * perform manual tasks
+* Requirements for provisioning (they bundle in "meta container")
+    * Cluster assets (manifest `yml`)
+    * External service assets (location, credentials)
+    * Application assets (seed data, config)
+    * Runtime tooling (template engine, config management, app clients)
+
+### MetaContainer / Service Bundle
+* bundles everything you need at provision time
+* immutable, can version + sign it
+* can bind/unbind (say to DB) via credentials/setup
+* runs to completion as a pod in your cluster
+* testable and reproducible (can use in CI lifecycle)
+
+### Service Catalog
+* provides composable services to applications
+* Actions
+    * provision/deprovision
+    * bind/unbind
+* self-service provisioning
+* client -> service catalog --> (broker/broker/broker)
+* [Open Service Broker API][osb-api]
+* [OpenShift Origin][openshift]
+
+### Automation Broker
+* Service Bundles
+    * are catalog entries
+    * run to completion for each operation
+    * run in a secure sandbox
+    * remove need to make your own broker
+* automation broker --> container registry((1-m) service bundles)
+* Actions
+    * *Must* implement Provision and Deprovision
+    * _May_ implement Bind and Unbind
+* `apb` tool manages the broker
+    * `apb init <project>` => `apb.yml` file for project
+    * yml file holds metadata and plans
+* Ansible Playbook Bundle
+    * has ansible, minimal RHEL image, directory of files (provision.yml, ...)
+* [APB Demo Repo][apb-demo]
+
 [postgres-partitioning]:https://www.socallinuxexpo.org/scale/16x/presentations/postgresql-partitioning
 [partman]:https://github.com/omniti-labs/pg_partman
 [pg-slides]:https://omniti.com/presents
+[ansible-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/multi-container-deployment-ansible-service-broker
+[automation-broker]:https://automationbroker.io
+[osb-api]:https://www.openservicebrokerapi.org/
+[openshift]:https://www.openshift.org/
+[apb-demo]:https://github.com/mhrivnak/bind-apb
