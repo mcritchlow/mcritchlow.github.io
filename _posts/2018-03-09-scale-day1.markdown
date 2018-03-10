@@ -132,6 +132,64 @@ very significant.
     * has ansible, minimal RHEL image, directory of files (provision.yml, ...)
 * [APB Demo Repo][apb-demo]
 
+## System76 HiDPI Daemon
+* [Summary][hidpi-summary]
+* Mostly a demo talk with some discussion about how they pulled it off technically.
+* Unfortunately for me, it's entirely targeted towards Mutter, so while any
+* Ubuntu/Gnome distro can probably leverage this, it's not going to help me out
+  with i3wm..
+
+## Ubuntu: Lessons Learned
+* [Summary][ubuntu-summary]
+* Jono's flight was delayed, so starting off with general Ubuntu Q+A
+  which is a carryover from the last session
+* You miss every shot you don't take
+    * had never seen a "community manager" position, but went for it
+    * i wonder if Samvera will end up with a formal community manager..
+* Diversity of participation is important
+    * in 2006, linux was about a) men b) programmers
+    * focused on not just devs but documentation, art, testers,
+      internationalization, etc.
+* Release cadence works
+    * mental model of, at any time, where you're at with a given release cycle
+    * Ubuntu does every 6mo
+* On-ramps and enablement are critical
+    * New to creating something of value (*themselves* and *project*)
+    * *developers*: how to participate, setup toolchain, skills to participate
+      (docs,training), what to do, how to get help, do it, get reviewed and
+validated.
+    * core contributors are different than people who build apps off the core,
+      they care about different things. The latter want documentation that works
+and a stable core.
+* Expectations are important and often poorly communicated
+    * what people _say_ they want isn't often what they _actually_ want
+* Scale is tough..
+    * >1M people on forum, 100's of devs
+    * Be explicit about you react to scale. Mentoring programs, create
+      opportunities for people to be social. In person meetings critical.
+    * First dev summit was ~80 devs, the last in person was 800..
+* Most people need direction, not options
+    * "Here are all these ways to help" _isn't productive_
+    * "Hey, would you mind doing this?" _is_
+* Well focused work can deliver great results
+    * Ubuntu convergence/phone debacle..
+    * but they had a core apps initiative w/ the community where they wanted to
+      create core apps and provide early SDK access. was very successful because
+it was a very focused, targeted, project.
+* Change and habits take time
+    * "change is bad" people can't win..
+* Code is an artifact of community
+    * source code is tangible evidence that a community is doing things
+    * but it is not the community. you can have code and a crap community that
+      no one wants to contribute to.
+* The biggest ideas can be carefully managed
+    * It's about breaking things down into small pieces.
+    * Whether it's a complex dev project or a CEO who want to do the Ubuntu phone and hire 150 devs
+immediately to do it.
+* You can think you know it all. You don't
+
+[ubuntu-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/ubuntu-lessons-learned
+[hidpi-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/solving-lodpi-problem-when-we-get-hi
 [postgres-partitioning]:https://www.socallinuxexpo.org/scale/16x/presentations/postgresql-partitioning
 [partman]:https://github.com/omniti-labs/pg_partman
 [pg-slides]:https://omniti.com/presents
