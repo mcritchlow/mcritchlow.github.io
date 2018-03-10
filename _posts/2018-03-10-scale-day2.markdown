@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "SCALE - Day 2 Notes"
+date:   2018-03-10
+categories: linux conferences devops
+---
+
+## Attaca: Git-esque Version Control for Absurd Quantities of Data ##
+* [Summary][attaca-summary]
+
+* Git LFS - stores large files outside of Git, in external server. So not
+  actually part of the Git repo.
+* Add multi-blog files (at a certain size threshold. Can share smaller blobs
+  between files
+* Blobs are stored in object store (could use sharded K/V store like Cassandra)
+* Ref store sits next to object store to guarantee consistency
+* Why will it handle such large files? It can offload them to storage system.
+  Hash-splitting
+* Ceph/RADOS is used at CERN handling multiple petabytes of data
+* Hashsplitting means even very large files are efficiently stored between
+  mutations
+* Alternative object stores:
+    * Cassandra/Scylla?
+    * dat?
+* Alternative ref stores:
+    * Vmware Haret?
+* Will have pluggable frontends too. Attaca + Subito
+* Subito: highly work-in-progress Git-like frontend for Attaca
+* Attaca: content addressable storage w/ upgradeable/multi-hash support
+* Attaca kinda like IPFS seems like..
+* Considering RDF for extensible commit metadata (how dataset was generated)
+
+[attaca-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/attaca-git-esque-version-control-absurd-quantities-data-rust
