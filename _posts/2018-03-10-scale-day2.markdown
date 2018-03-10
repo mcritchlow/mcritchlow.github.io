@@ -23,11 +23,116 @@ categories: linux conferences devops
     * Cassandra/Scylla?
     * dat?
 * Alternative ref stores:
-    * Vmware Haret?
+    * [Vmware Haret?][vmware-haret]
 * Will have pluggable frontends too. Attaca + Subito
 * Subito: highly work-in-progress Git-like frontend for Attaca
 * Attaca: content addressable storage w/ upgradeable/multi-hash support
 * Attaca kinda like IPFS seems like..
 * Considering RDF for extensible commit metadata (how dataset was generated)
 
+## Bacon Flavored Open Source Do's and Don'ts
+* [Summary][bacon-summary]
+* Jono: Ubuntu Community Manager, worked with GitHub and Xprize, O'Reilly, Forbes,
+  Huawei, Google, Microsoft, Deutsche Bank..
+* Trial and Error
+    * _must_ experiment, there's no hard recipes for this stuff
+    * therefore some things are going to fail, so have to set expectations
+
+### Lessons Learned
+* Openness/Transparency
+    * GitLab debacle example, but they were completely open and the community
+      rallied behind them. Live youtube stream, google doc, etc.
+* Inclusivity
+    * Including differences in how we solve problems, differing views of the
+      world
+* Focus on People and Relationships
+* Asynchronous, Hackable Workflow
+* Stoic Management of Conflict
+    * Stoicism - level of control of emotion/reactions
+    * 7 habits of highly effective people
+    * [The obstacle is the way][obstacle-book]
+    * [The daily stoic][stoic-book]
+* Company Bias in Some Quarters
+
+### New Projects
+* Do
+    * Define clear personas
+    * Build clear on-ramps
+    * measure validated participation
+    * use socially-acceptable infra (language, CI/CD tooling, etc.)
+* Don't
+    * Make them private
+    * Be distracted by too much infrastructure
+    * over govern
+
+### Participation and Engagement
+* Do
+    * Be inclusive
+    * Default to open
+    * Handle sensitive issues privately
+    * Set clear conduct expectations
+    * lead by example
+    * provide intrinsic/extrinsic incentives
+* Don't
+    * Use trad. marketing on developers
+    * resort to span/auto signups
+    * get distracted
+    * depend only on Code of Conduct
+
+### Content Production
+* Do
+    * Define and service multiple audiences
+    * create a content calendar
+    * create a content pipeline
+    * optimize social media
+* Don't
+    * overcomplicate content delivery/approvals
+    * don't use offensive imagery/terminology
+    * focus on unqualified growth
+    * buy followers
+
+### Metrics and Performance
+* Do
+    * Focus on value, not activity
+    * optimize for velocity
+    * get stakeholder buy-in
+    * integrate cadence-based tracking
+    * be reactive to trends
+* Don't
+    * ignore metrics
+    * become a data nerd (focus on a few, core metrics)
+    * produce uninformed targets
+    * track one dimension
+    * overcomplicate what you track
+    * focus on numbers and not outcomes
+
+### Leadership and Governance
+* Do
+    * lead by example
+    * lead publicly and openly
+    * publish governance methodology
+    * mentor and support others
+    * accept and embrace failure
+* Don't
+    * overcomplicate governance
+    * personalize issues
+    * require mediation archives
+
+### Emergencies
+* Do
+    * Stay calm
+    * be open (where appropriate)
+    * keep the communication lines open
+    * include the community in debugging (GitLab)
+    * resolve quickly
+    * provide a post-mortem
+* Don't
+    * loose your cool
+    * jump to conclusions
+    * close communication channels
+
+[stoic-book]:https://en.wikipedia.org/wiki/The_Daily_Stoic
+[obstacle-book]:https://en.wikipedia.org/wiki/The_Obstacle_Is_the_Way
+[bacon-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/bacon-flavored-open-source-dos-and-donts
+[vmware-haret]:https://github.com/vmware/haret
 [attaca-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/attaca-git-esque-version-control-absurd-quantities-data-rust

@@ -164,7 +164,7 @@ and a stable core.
 * Expectations are important and often poorly communicated
     * what people _say_ they want isn't often what they _actually_ want
 * Scale is tough..
-    * >1M people on forum, 100's of devs
+    * More than 1M people on forum, 100's of devs
     * Be explicit about you react to scale. Mentoring programs, create
       opportunities for people to be social. In person meetings critical.
     * First dev summit was ~80 devs, the last in person was 800..
