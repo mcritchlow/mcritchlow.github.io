@@ -131,6 +131,60 @@ categories: linux conferences devops
     * jump to conclusions
     * close communication channels
 
+## So we have free fonts; now what?
+* [Summary][fonts-summary]
+* Very interesting/awesome talk, but I really just sat and listened.. It was
+  largely an excellent overview of the state of the user experience with free
+fonts and what needs to be fixed/addressed to make the experience more viable
+for all users
+
+## Git like a Pro
+meh.. Well it was fine, but I misunderstood the level of existing knowledge it
+was targeted to. So wasn't as useful for me.
+
+## Running Containerized in an on-prem Datacenter
+* [Summary][onprem-summary]
+* What is a Container Orchestrator
+    * Kubernetes/Apache mesos/Cloud Foundry/DC/OS, Docker Swarm
+    * From resource perspective -- attempt to manage resources into a single
+      resource pool
+    * From an application perspective -- a scheduler/dispatcher for requests to
+      run workloads that consume the pooled resources
+* Why would I want an Orchestrator?
+    * there are open source solutions
+    * Docker Swarm for apps CI/CD
+    * many others, couldn't keep up :)
+* Why on prem?
+    * you can't afford latency
+    * legal data governance
+    * need for data ingress preprocessing for local control and notifications
+      loops, data reduction
+* PaaS(Platform) vs CaaS(Container) vs IaaS(Infrastructure)
+    * main distinguishing factor, can I install and manage a DB? (I think is
+      what he focused on, need to check his slides/notes once out)
+* Most container orchestrator's say they originated from Google's borg
+* What is our ideal datacenter?
+* Public Cloud vs On-Prem - What's different?
+    * Cloud tends to have very nicely designed admin UI's, much better "OOTB"
+      than open source equivalents. not that they don't have admin UI's, but
+that's part of what you're paying for.
+    * Networking is different. Choices are made for you
+    * No standardized mandated network ingress/egress service with an API. As
+      opposed to AWS which has made those decisions for you
+    * On-prem allows you to deal with legacy infrastructure requirements
+* 12 factor (VI. Processes)
+    * stateless is really just making it "someone else's problem", because
+      eventually you need state. In cloud context you can make this their
+responsibility, on-prem you own it.
+    * this follows the perspective of monolith == bad (same/especially for DB)
+* Container advantages make sense for stateful stuff too
+    * On-prem, you own posix mountable storage, security, policy, health service
+      checks, metrics
+* Container Storage Interface
+    * attempt at a vendor-neutral specification for storage plugins
+
+[fonts-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/so-we-have-free-web-fonts-now-what#main-content
+[onprem-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/running-containerized-workloads-prem-datacenter
 [stoic-book]:https://en.wikipedia.org/wiki/The_Daily_Stoic
 [obstacle-book]:https://en.wikipedia.org/wiki/The_Obstacle_Is_the_Way
 [bacon-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/bacon-flavored-open-source-dos-and-donts
