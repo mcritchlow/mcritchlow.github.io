@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "SCALE - Day 3 Notes"
+date:   2018-03-11
+categories: linux conferences devops
+---
+
+## Travel, Tribes & Contribution Tales
+* [Summary][aws-summary]
+* Zaheda Bhorat -- Head of OS strategy at AWS
+* 23M+ O/S developers, 64M+ repos on GitHub
+* "Open Source is eating the software world"
+* Very few(non-dev) people understand that they're using open source in their
+  daily lives
+
+## Endless OS: A desktop for the next billion users
+* [Summary][endless-summary]
+* From About page:
+```
+Computing is one of the greatest revolutions in human history. Yet, it remains
+out of reach for half the planet. We created Endless OS – a free and robust
+computing solution – so people everywhere have access to relevant information
+and technology.
+
+Our goal is to build a global platform for digital literacy.
+
+What happens when a billion people get computers?
+```
+* Today there is a *huge* gap between those who have computers and those who
+  don't
+* While more people have phones (~5b vs ~1b) people still need a computer for
+  productivity
+* Desktop users convert more to sales :)
+* Global average of internet coverage is 53%
+* Biggest barrier for cost of entry is internet, not hardware
+* On average, ppl can afford *300MB* per month, but average PC consumes *60GB*
+* US can't even afford infrastructure for internet to all, would cost billions
+* Endless preloads apps to cache data locally, can refresh on things like cheap
+  overnight data plans, FM radio signal, mesh network, etc.
+* 80% of most popular Wikipedia content can be compressed to 1GB. So endless
+  provides this
+* More than 100 free apps and curated content for all ages and occasions. Does
+  not require an internet connection
+* Plea: Help build software that is mindful of users' data.
+    * *Don't* assume people have 100% connection.
+    * Build in offline features
+* Desktop designed to model the UI/UX of a phone, since that's what the target
+  demographic is more familiar with
+* Built on GNOME and Debian
+* Use [OS tree][os-tree] and atomic updates to make it easier for people to update their
+  computer
+* Using [Flatpak][flatpak] and [Flathub][flathub] for managing apps
+* Considering micro-financing for people to lease solar panels (for power) and
+  an Endless computer
+* [Endless community site][endless-community] for getting involved
+* "offline first"
+
+[endless-community]:https://community.endlessos.com
+[flatpak]:https://flatpak.org
+[flathub]:https://flathub.org
+[os-tree]:https://en.wikipedia.org/wiki/OSTree
+[endless-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/endless-os-desktop-next-billion-users-0#main-content
+[aws-summary]:https://www.socallinuxexpo.org/scale/16x/presentations/travel-tribes-and-contribution-tales#main-content
