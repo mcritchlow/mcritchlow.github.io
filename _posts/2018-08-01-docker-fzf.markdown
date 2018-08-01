@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Docker bash scripts with fzf"
+title:  "Docker bash functions with fzf"
 date:   2018-08-01
 categories: software docker bash fzf
 ---
@@ -8,11 +8,11 @@ categories: software docker bash fzf
 ## Introduction ##
 Now that our dev team is starting to dip our toes into Docker, I've realized
 some pain points with managing docker images and containers that I've solved
-with a couple very simple bash scripts, utilizing the [fzf fuzzy finder][fzf]
+with a couple very simple bash functions, utilizing the [fzf fuzzy finder][fzf]
 that I have incorporated into much of my daily workflow both in terminal and
 vim.
 
-In order to take advantage of these little bash scripts, you'll need to install
+In order to take advantage of these little bash functions, you'll need to install
 fzf via the link above, if you don't already have it.
 
 ## Problem ##
