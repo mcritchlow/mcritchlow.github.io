@@ -29,7 +29,7 @@ The simple functions are as follows. Place them in your personal `bashrc`,
 drc() {
   local container_id
   container_id=$(docker ps -a | fzf | awk '{print $1}')
-  docker rm "$container_id"
+  docker rm -v "$container_id"
 }
 
 # dri [FUZZY PATTERN] - Choose a docker image to remove
@@ -38,6 +38,15 @@ dri() {
   image_id=$(docker images | fzf | awk '{print $3}')
   docker rmi "$image_id"
 }
+{% endhighlight %}
+
+## Big Hammer ##
+Want to start completely clean? Create an alias that leverages the relatively
+recent `docker system prune` command. I have the following alias setup, and try
+to rarely use it.. This removes everything, including attached volumes.
+
+{% highlight shell %}
+alias docker-nuke='docker system prune -f --all --volumes'
 {% endhighlight %}
 
 ## Usage ##
