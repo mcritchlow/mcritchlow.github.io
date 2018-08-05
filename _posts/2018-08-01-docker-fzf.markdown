@@ -22,22 +22,30 @@ The problem we're trying to solve with these methods is the following:
 
 ## Bash Functions ##
 The simple functions are as follows. Place them in your personal `bashrc`,
-`bash_profile` or zsh equivalent.
+`bash_profile` or zsh equivalent. Obviously if these functions somehow conflict
+with existing aliases/binaries on your PATH, adjust as needed.
 
 {% highlight shell %}
+# drcv [FUZZY PATTERN] - Choose a docker container to remove (and associated volumes)
+drcv() {
+  docker ps -a | fzf -m | awk '{print $1}' | xargs docker rm -v
+}
+
 # drc [FUZZY PATTERN] - Choose a docker container to remove
 drc() {
-  local container_id
-  container_id=$(docker ps -a | fzf | awk '{print $1}')
-  docker rm -v "$container_id"
+  docker ps -a | fzf -m | awk '{print $1}' | xargs docker rm
 }
 
 # dri [FUZZY PATTERN] - Choose a docker image to remove
 dri() {
-  local image_id
-  image_id=$(docker images | fzf | awk '{print $3}')
-  docker rmi "$image_id"
+  docker images | fzf -m | awk '{print $3}' | xargs docker rmi
 }
+
+# drv [FUZZY PATTERN] - Choose a docker volume to remove
+drv() {
+  docker volume ls | fzf -m | awk '{print $2}' | xargs docker volume rm
+}
+
 {% endhighlight %}
 
 ## Big Hammer ##
