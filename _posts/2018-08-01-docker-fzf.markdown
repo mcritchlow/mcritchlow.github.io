@@ -25,6 +25,9 @@ The simple functions are as follows. Place them in your personal `bashrc`,
 `bash_profile` or zsh equivalent. Obviously if these functions somehow conflict
 with existing aliases/binaries on your PATH, adjust as needed.
 
+> Note: With any of these functions you may select multiple items from the list
+> by hitting **Tab** to select, and **Shift-Tab** to unselect
+
 {% highlight shell %}
 # drcv [FUZZY PATTERN] - Choose a docker container to remove (and associated volumes)
 drcv() {
