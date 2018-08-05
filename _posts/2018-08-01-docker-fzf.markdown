@@ -31,24 +31,24 @@ with existing aliases/binaries on your PATH, adjust as needed.
 {% highlight shell %}
 # drcv [FUZZY PATTERN] - Choose a docker container to remove (and associated volumes)
 drcv() {
-  docker ps -a | fzf -m | awk '{print $1}' | xargs docker rm -v
+  docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker rm -v
 }
 
 # drc [FUZZY PATTERN] - Choose a docker container to remove
 drc() {
-  docker ps -a | fzf -m | awk '{print $1}' | xargs docker rm
+  docker ps -a | sed '1d' | fzf -m | awk '{print $1}' | xargs docker rm
 }
+
 
 # dri [FUZZY PATTERN] - Choose a docker image to remove
 dri() {
-  docker images | fzf -m | awk '{print $3}' | xargs docker rmi
+  docker images | sed '1d' | fzf -m | awk '{print $3}' | xargs docker rmi
 }
 
 # drv [FUZZY PATTERN] - Choose a docker volume to remove
 drv() {
-  docker volume ls | fzf -m | awk '{print $2}' | xargs docker volume rm
+  docker volume ls | sed '1d'| fzf -m | awk '{print $2}' | xargs docker volume rm
 }
-
 {% endhighlight %}
 
 ## Big Hammer ##
