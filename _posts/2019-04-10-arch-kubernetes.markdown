@@ -59,25 +59,25 @@ Project Surfliner.
 
 Here's what I needed for the install:
 
-1. Install `minikube` and `kubectl`. Thankfully these are in the repos now
+- Install `minikube` and `kubectl`. Thankfully these are in the repos now
 
 ```
 sudo pacman -Sy minikube kubectl
 ```
 
-2. Install Helm and the KVM2 driver from the AUR. There are a few options, I
+- Install Helm and the KVM2 driver from the AUR. There are a few options, I
 used:
 - https://aur.archlinux.org/kubernetes-helm.git
 - https://aur.archlinux.org/docker-machine-driver-kvm2.git
 
 
-3. Configure Minikube to use the `kvm2` driver
+- Configure Minikube to use the `kvm2` driver
 
 ```
 minikube config set vm-driver kvm2
 ```
 
-4. I also bumped the resources for minikube, because Java..
+- I also bumped the resources for minikube, because Java..
 
 ```
 
