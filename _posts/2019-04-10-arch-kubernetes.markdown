@@ -78,9 +78,13 @@ minikube config set vm-driver kvm2
 ```
 
 4. I also bumped the resources for minikube, because Java..
+
 ```
+
 minikube config set cpus 4
 minikube config set memory 4000
 ```
 
 [libvirt-arch]:https://wiki.archlinux.org/index.php/Libvirt
+
+
