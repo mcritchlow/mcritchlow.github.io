@@ -2,7 +2,6 @@
 layout: post
 title:  "Setting up a local Kuberentes environment on Arch Linux"
 date:   2019-04-10
-categories: devops kubernetes helm arch
 ---
 
 ### Installing Libvirt/Qemu

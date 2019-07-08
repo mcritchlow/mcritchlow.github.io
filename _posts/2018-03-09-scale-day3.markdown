@@ -2,7 +2,6 @@
 layout: post
 title:  "SCALE - Day 3 Notes"
 date:   2018-03-11
-categories: linux conferences devops
 ---
 
 ## Travel, Tribes & Contribution Tales

@@ -2,7 +2,6 @@
 layout: post
 title:  "On leaving macOS for Linux"
 date:   2017-05-30 18:39:30 -0700
-categories: linux macos solus development
 ---
 ### Background
 I'm going through a job transition that I intend to write a separate post about. The only relevant detail is that this

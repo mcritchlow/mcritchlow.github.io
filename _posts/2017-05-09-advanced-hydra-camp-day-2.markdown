@@ -2,7 +2,6 @@
 layout: post
 title:  "Advanced Hydra Camp - Day 2"
 date:   2017-05-09 18:39:30 -0700
-categories: hydra development
 ---
 Hydra Camp Day 2 kicked off with everyone breaking into groups of 4-6 and
 discussing four questions together:

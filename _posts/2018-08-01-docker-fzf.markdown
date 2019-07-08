@@ -2,7 +2,6 @@
 layout: post
 title:  "Docker bash functions with fzf"
 date:   2018-08-01
-categories: software docker bash fzf
 ---
 
 ## Introduction ##

@@ -2,7 +2,6 @@
 layout: post
 title:  "Advanced Hydra Camp - Day 3"
 date:   2017-05-10 18:39:30 -0700
-categories: hydra development
 ---
 Hydra Camp Day 3 followed the same pattern as Day 2 by starting with everyone breaking into groups of 4-6 and
 discussing four questions together:

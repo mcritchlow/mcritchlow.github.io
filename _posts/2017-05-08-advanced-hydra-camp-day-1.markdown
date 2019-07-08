@@ -2,7 +2,6 @@
 layout: post
 title:  "Advanced Hydra Camp - Day 1"
 date:   2017-05-08 18:39:30 -0700
-categories: hydra development
 ---
 Today was the first day of they inaugural Advanced Hydra Camp. The purpose of the
 camp is to do a deeper dive into the Hydra stack as it stands today. That means
@@ -74,7 +73,7 @@ Tom Johnson also called out a neat trick when we were talking about defining
 RDF::URI's. He said that instead of RDF::URI.new or RDF::URI(), one could do:
 
 {% highlight ruby %}
-  ::RDF::URI.intern('http://permanent.link#is-a-lie') 
+  ::RDF::URI.intern('http://permanent.link#is-a-lie')
 {% endhighlight %}
 
 This apparently adds the URI to an in memory cache, which, given that one is

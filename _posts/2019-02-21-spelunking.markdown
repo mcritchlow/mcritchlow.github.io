@@ -2,7 +2,6 @@
 layout: post
 title:  "Ruby Spelunking"
 date:   2019-02-21
-categories: software ruby debugging
 ---
 
 > or "where the f^&$ is that method defined?!"

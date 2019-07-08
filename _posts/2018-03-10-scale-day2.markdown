@@ -2,7 +2,6 @@
 layout: post
 title:  "SCALE - Day 2 Notes"
 date:   2018-03-10
-categories: linux conferences devops
 ---
 
 ## Attaca: Git-esque Version Control for Absurd Quantities of Data ##

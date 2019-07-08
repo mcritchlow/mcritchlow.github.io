@@ -2,7 +2,6 @@
 layout: post
 title:  "MOOM Week 1: The Object-Oriented Idea"
 date:   2018-01-09
-categories: software object-oriented avdi
 ---
 
 ## Introduction ##
