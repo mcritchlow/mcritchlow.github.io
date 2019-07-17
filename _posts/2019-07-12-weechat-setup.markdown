@@ -11,7 +11,6 @@ Install scripts:
 /scripts
 - autojoinem
 - autosort
-- buffer_autohide
 - colorize_nick
 - go
 - urlserver
@@ -25,11 +24,8 @@ Setup some basic configuration:
 /set plugins.var.python.urlserver.http_port "60211"
 # set slack download location
 /set plugins.var.python.slack.files_download_location = "~/Downloads/"
-```
-
-Set buffers to 'autohide' in `~/.weechat/plugins.conf`
-```
-python.buffer_autohide.hide_inactive = "on"
+# yes.. emoji
+/set weechat.completion.default_template "%(nicks)|%(irc_channels)|%(emoji)"
 ```
 
 References:
