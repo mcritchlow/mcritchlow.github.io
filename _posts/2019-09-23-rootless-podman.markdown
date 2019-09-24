@@ -24,9 +24,11 @@ grep johndoe /etc/subuid /etc/subgid
 ```
 
 ## Use fuse-overlayfs for rootless driver
-Install fuse-overlayfs for faster rootless builds: https://aur.archlinux.org/packages/fuse-overlayfs/
-Set the driver option under [storage] to "overlay" in `$HOME/.config/containers/storage.conf`
+> Note: If you installed podman prior to fuse-overlayfs, you need to remove
+> ~/.local/share/containers and ~/.config/containers directories. Then, in a new
+> terminal, a `podman info` should regenerate things
 
+Install fuse-overlayfs for faster rootless builds: https://aur.archlinux.org/packages/fuse-overlayfs/
 
 
 References:
