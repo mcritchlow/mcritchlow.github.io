@@ -34,6 +34,28 @@ project `Gemfile`. Then the other parts could probably be placed in a `rake`
 task, or something like that. For my purposes, this was an experiment so I kept
 this script external to the repository and/or `.gitignore`'d.
 
+Solargraph also has a configuration file of its own. I added the name of this
+file to my global `.gitignore` file, as again we're not using this for our
+project so I don't want it in git.
+
+This file needs to be called `.solargraph.yml` and exist in the project root
+directory. For our project I just used the defaults:
+
+{% highlight yaml %}
+include:
+- "**/*.rb"
+exclude:
+- spec/**/*
+- test/**/*
+- vendor/**/*
+- ".bundle/**/*"
+require: []
+domains: []
+reporters:
+- require_not_found
+max_files: 5000
+{% endhighlight %}
+
 Then, in Neovim, I setup a local `.nvimrc` file with the following setup:
 
 {% highlight lua %}
