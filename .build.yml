@@ -1,13 +1,14 @@
 image: archlinux
 packages:
-  - jekyll
+  - ruby-bundler
 oauth: pages.sr.ht/PAGES:RW
 environment:
   site: mcritchlow.srht.site
 tasks:
 - build-site: |
     cd $site
-    jekyll build
+    bundle install
+    bundle exec jekyll build
 - package: |
     cd $site/_site
     tar -cvz . > ../../site.tar.gz
