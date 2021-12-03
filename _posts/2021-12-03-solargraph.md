@@ -25,6 +25,15 @@ docker-compose exec "$service_name" yard gems
 echo "Finished installing solargraph LSP in application container..."
 {% endhighlight %}
 
+Note that this MUST be run prior to opening up Neovim (or your editor of choice)
+to ensure all the solargraph bits are installed.
+
+If a team were to agree to adopt solargraph for the project, then this script
+could be replaced with adding `solargraph` to the `development` group in a
+project `Gemfile`. Then the other parts could probably be placed in a `rake`
+task, or something like that. For my purposes, this was an experiment so I kept
+this script external to the repository and/or `.gitignore`'d.
+
 Then, in Neovim, I setup a local `.nvimrc` file with the following setup:
 
 {% highlight lua %}
@@ -42,7 +51,8 @@ nvim_lsp.solargraph.setup{
 {% endhighlight %}
 
 The key here is the `cmd` being updated to use `docker-compose` with the `-T`
-flag which sets up a TTY for stdio.
+flag which sets up a TTY for stdio. This setting _should_ exist as an option no
+matter how your editor handles LSP configuration.
 
 Perhaps also worth noting is that I'm disabling diagnostics. I previously setup
 diagnostics for the projects using [null-ls][null-ls]
