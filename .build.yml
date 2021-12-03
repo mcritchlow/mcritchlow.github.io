@@ -10,7 +10,7 @@ tasks:
     bundle install
     bundle exec jekyll build
 - package: |
-    cd _site
+    cd $site/_site
     tar -cvz . > ../../site.tar.gz
 - upload: |
     acurl -f https://pages.sr.ht/publish/$site -Fcontent=@site.tar.gz
