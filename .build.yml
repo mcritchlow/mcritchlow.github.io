@@ -7,8 +7,7 @@ environment:
 tasks:
 - build-site: |
     cd $site
-    bundle install
-    bundle exec jekyll build
+    jekyll build
 - package: |
     cd $site/_site
     tar -cvz . > ../../site.tar.gz
