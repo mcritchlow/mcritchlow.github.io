@@ -1,0 +1,17 @@
+image: ruby:2.7.2-alpine
+
+oauth: pages.sr.ht/PAGES:RW
+environment:
+  site: mcritchlow.srht.site
+tasks:
+- dependencies: |
+    apk add --no-cache build-base
+- build-site: |
+    cd $site
+    bundle install
+    bundle exec jekyll build
+- package: |
+    cd _site
+    tar -cvz . > ../../site.tar.gz
+- upload: |
+    acurl -f https://pages.sr.ht/publish/$site -Fcontent=@site.tar.gz
