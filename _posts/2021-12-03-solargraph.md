@@ -16,6 +16,9 @@ In order to get this working with a fairly small, simple Ruby project using
 setup for `solargraph` in the container, which takes one argument, the name of
 the compose `service`. This can be `web`, `app`, etc.
 
+This can take a while because we're downloading and generating documentation for
+as many dependencies as possible.
+
 {% highlight shell %}
 service_name="$1"
 shift
@@ -103,6 +106,10 @@ local null_ls_sources = {
 }
 null_ls.register(null_ls_sources)
 {% endhighlight %}
+
+## How it looks
+
+![Neovim Solargraph]({{ site.url }}/assets/solargraph.png)
 
 [null-ls]: https://github.com/jose-elias-alvarez/null-ls.nvim/
 [solargraph]: https://solargraph.org/
