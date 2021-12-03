@@ -9,6 +9,8 @@ Currently, Neovim only supports operating with an LSP via `stdio`, which
 thankfully Solargraph supports. Hopefully in the future it will also support
 TCP/external server setup.
 
+## Installing solargraph
+
 In order to get this working with a fairly small, simple Ruby project using
 `docker-compose`, I first created a little script to install and do initial
 setup for `solargraph` in the container, which takes one argument, the name of
@@ -34,6 +36,8 @@ project `Gemfile`. Then the other parts could probably be placed in a `rake`
 task, or something like that. For my purposes, this was an experiment so I kept
 this script external to the repository and/or `.gitignore`'d.
 
+## Solargraph configuration file
+
 Solargraph also has a configuration file of its own. I added the name of this
 file to my global `.gitignore` file, as again we're not using this for our
 project so I don't want it in git.
@@ -55,6 +59,8 @@ reporters:
 - require_not_found
 max_files: 5000
 {% endhighlight %}
+
+## Setting up LSP in Neovim
 
 Then, in Neovim, I setup a local `.nvimrc` file with the following setup:
 
