@@ -27,7 +27,7 @@ echo "Finished installing solargraph LSP in application container..."
 
 Then, in Neovim, I setup a local `.nvimrc` file with the following setup:
 
-{% highlight vim %}
+{% highlight lua %}
 local nvim_lsp = require('lspconfig')
 nvim_lsp.solargraph.setup{
   cmd = { "docker-compose", "exec", "-T", "app", "solargraph", "stdio" },
@@ -49,7 +49,7 @@ diagnostics for the projects using [null-ls][null-ls]
 
 So the remainder of my local `.nvimrc` file is as follows:
 
-{% highlight vim %}
+{% highlight lua %}
 -- Null-ls configuration
 local null_ls = require("null-ls")
 
@@ -65,7 +65,6 @@ local null_ls_sources = {
 }
 null_ls.register(null_ls_sources)
 {% endhighlight %}
-
 
 [null-ls]: https://github.com/jose-elias-alvarez/null-ls.nvim/
 [solargraph]: https://solargraph.org/
