@@ -1,11 +1,10 @@
-image: ruby:2.7.2-alpine
-
+image: archlinux
 oauth: pages.sr.ht/PAGES:RW
 environment:
   site: mcritchlow.srht.site
 tasks:
 - dependencies: |
-    apk add --no-cache build-base
+    yay -Syu ruby-bundler
 - build-site: |
     cd $site
     bundle install
