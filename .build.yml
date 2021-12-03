@@ -1,10 +1,10 @@
 image: archlinux
+packages:
+  - jekyll
 oauth: pages.sr.ht/PAGES:RW
 environment:
   site: mcritchlow.srht.site
 tasks:
-- dependencies: |
-    yay -Syu ruby-bundler
 - build-site: |
     cd $site
     bundle install
